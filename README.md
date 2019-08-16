@@ -132,16 +132,19 @@ You might have noticed that in the shared whiteboard application, `ShapeServant`
 - Why have `Shape` and `ShapeFactory` been made threadsafe?
 
 ```
+This is so that none of the data can be accessed by multiple requests at the same time, allowing it to maintain integrity, ie. not get corrupted.
 ```
 
 - Does your `Concert` service need to be threadsafe?
 
 ```
+Yes since our list of concerts might be accessed by multiple clients and we dont want to run methods that may encounter errors if another user does something to the data. 
 ```
 
 - Should a RMI server use multiple threads when handling remote invocations?
 
 ```
+No as you may run the same remote invocation at the same time, which may lead to an error.
 ```
 
 
