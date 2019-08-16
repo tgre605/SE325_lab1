@@ -13,21 +13,21 @@ public class Concert implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private int id;
+    private long id;
     private String title;
     private LocalDateTime date;
 
-    public Concert(int id, String title, LocalDateTime date) {
+    public Concert(long id, String title, LocalDateTime date) {
         this.id = id;
         this.title = title;
         this.date = date;
     }
 
     public Concert(String title, LocalDateTime date) {
-        this(null, title, date);
+        this(-1, title, date);
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
